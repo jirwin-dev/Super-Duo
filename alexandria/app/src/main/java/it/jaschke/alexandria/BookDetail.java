@@ -144,9 +144,9 @@ public class BookDetail extends Fragment implements LoaderManager.LoaderCallback
             ((TextView) rootView.findViewById(R.id.categories)).setText(categories);
 
             //Handle tablet view
-            if (rootView.findViewById(R.id.right_container) != null) {
-                rootView.findViewById(R.id.backButton).setVisibility(View.INVISIBLE);
-            }
+//            if (rootView.findViewById(R.id.right_container) != null) {
+//                rootView.findViewById(R.id.backButton).setVisibility(View.INVISIBLE);
+//            }
         }
     }
 

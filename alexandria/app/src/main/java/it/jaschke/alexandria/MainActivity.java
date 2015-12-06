@@ -189,11 +189,14 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
         IntentResult scanningResult = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);
         if (scanningResult != null) {
             String ean = scanningResult.getContents();
-            Intent bookIntent = new Intent(this, BookService.class);
-            bookIntent.putExtra(BookService.EAN, ean);
-            bookIntent.setAction(BookService.FETCH_BOOK);
-            startService(bookIntent);
-            onItemSelected(ean);
+
+            if (ean != null) {
+                Intent bookIntent = new Intent(this, BookService.class);
+                bookIntent.putExtra(BookService.EAN, ean);
+                bookIntent.setAction(BookService.FETCH_BOOK);
+                startService(bookIntent);
+                onItemSelected(ean);
+            }
         }
     }
 }
